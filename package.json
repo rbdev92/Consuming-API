@@ -1,16 +1,26 @@
 {
-  "name": "fetch-api",
+  "name": "consuming-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Criar um API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbdev92/Consuming-API.git"
   },
   "keywords": [],
-  "author": "Renato Brito",
-  "email": "dev.renatobrito@gmail.com",
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbdev92/Consuming-API/issues"
+  },
+  "homepage": "https://github.com/rbdev92/Consuming-API#readme",
   "dependencies": {
-    "bootstrap": "^5.1.3"
+    "axios": "^1.3.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
   }
 }

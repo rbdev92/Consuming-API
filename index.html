@@ -1,52 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+<body>
+  <main>
 
-    <title>Consulta CEP</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Consultando CEP</h1>
-      <form>
-        <div class="form-group">
-          <label for="">CEP
-            <input type="text" class="form-control" maxlength="9" id="cep"/>
-          </label>
-          <small>00000-000</small>
-        </div>
-        <div class="form-group">
-          <label for="">Logradouro
-            <input type="text" class="form-control" id="logradouro"/>
-          </label>
-          <small>Av, Rua, Travessa...</small>
-        </div>
-        <div class="form-group">
-          <label for="">Bairro
-            <input type="text" class="form-control" id="bairro"/>
-          </label>
-          <small>Bairro</small>
-        </div>
-        <div class="form-group">
-          <label for="">Localidade
-            <input type="text" class="form-control" id="localidade"/>
-          </label>
-          <small>Cidade</small>
-        </div>
-        <div class="form-group">
-          <label for="">UF
-            <input type="text" class="form-control" id="uf"/>
-          </label>
-          <small>Estado</small>
-        </div>
-      </form>
-    </div>
-    <script src="src/js/main.js"></script>
-  </body>
-</html>
+  </main>
+</body>
+
+<script>
+  async function getContent() {
+    try {
+      const response = await fetch('http://localhost:4567')
+      const data = await response.json()
+      show(data)      
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  getContent()
+
+  function show(users) {
+    let output = ''
+
+    for (let user of users) {
+      output += `<li>${user.name}</li>`
+    }
+
+    document.querySelector('main').innerHTML = output
+  }
+</script>
