@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon server.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rbdev92/Consuming-API.git"
